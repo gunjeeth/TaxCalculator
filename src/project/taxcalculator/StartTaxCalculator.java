@@ -117,42 +117,82 @@ public class StartTaxCalculator extends JFrame {
 		} 
 		else if (totalIncome > 300000){
 			taxValue = 300000 * 0.07;
-			totalIncome -= 300000;
 		}
 		
+		totalIncome = totalIncome - 300000;
 		
-		// Checking condition for next 300000 of taxable income at 11%
-		if(totalIncome <= 300000){
+		
+		// Checking condition for next 300000 of taxable income at 11% 
+		if(totalIncome == 0 || totalIncome < 0){
+			return taxValue;
+		}
+		else if (totalIncome<300000 && !(totalIncome < 0)){
 			taxValue = taxValue + (totalIncome * 0.11);
 		} 
-		else if(totalIncome > 300000){
-			taxValue = taxValue + (300000 * 0.11);
-			totalIncome -= 300000;
+		else if (totalIncome > 300000){
+			taxValue = taxValue + (300000*0.11);
 		}
 		
+		totalIncome = totalIncome - 300000;
 		
-		// Checking condition for next 500000 of taxable income at 15%
-		if(totalIncome <= 500000){
+		
+		
+		// Checking condition for next 500000 of taxable income at 15% 
+		if(totalIncome == 0 || totalIncome < 0){
+			return taxValue;
+		}
+		else if (totalIncome<500000 && !(totalIncome < 0)){
 			taxValue = taxValue + (totalIncome * 0.15);
 		} 
-		else if(totalIncome > 500000){
-			taxValue = taxValue + (500000 * 0.15);
-			totalIncome -= 500000;
+		else if (totalIncome > 500000){
+			taxValue = taxValue + (500000*0.15);
 		}
 		
+		totalIncome = totalIncome - 500000;
 		
-		// Checking condition for next 500000 of taxable income at 19%
-		if(totalIncome <= 500000){
+		
+		// Checking condition for next 500000 of taxable income at 19% 
+		if(totalIncome == 0 || totalIncome < 0){
+			return taxValue;
+		}
+		else if (totalIncome<500000 && !(totalIncome < 0)){
 			taxValue = taxValue + (totalIncome * 0.19);
 		} 
-		else if(totalIncome > 500000){
-			taxValue = taxValue + (500000 * 0.19);
-			totalIncome -= 500000;
+		else if (totalIncome > 500000){
+			taxValue = taxValue + (500000*0.19);
 		}
 		
+		totalIncome = totalIncome - 500000;
 		
-		// Checking condition for next 1600000 of taxable income at 21%
 		
+		
+		// Checking condition for next 1600000 of taxable income at 21% 
+		if(totalIncome == 0 || totalIncome < 0){
+			return taxValue;
+		}
+		else if (totalIncome<1600000 && !(totalIncome < 0)){
+			taxValue = taxValue + (totalIncome * 0.21);
+		} 
+		else if (totalIncome > 1600000){
+			taxValue = taxValue + (1600000*0.21);
+		}
+		
+		totalIncome = totalIncome - 1600000;
+		
+		
+		
+		// Checking condition for above 3200000 of taxable income at 24% 
+		if(totalIncome == 0 || totalIncome < 0){
+			return taxValue;
+		}
+		else if (totalIncome<3200000 && !(totalIncome < 0)){
+			taxValue = taxValue + (totalIncome * 0.24);
+		} 
+		else if (totalIncome > 3200000){
+			taxValue = taxValue + (3200000*0.24);
+		}
+		
+		totalIncome = totalIncome - 3200000;
 		
 		//System.out.println(totalIncome);
 		
